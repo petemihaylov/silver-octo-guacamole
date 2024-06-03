@@ -1,54 +1,70 @@
-## 🚀 Getting Started
+# Saas UI - Next.js - landing page.
 
-### 📦 Dependencies
+This is a free Next.js landing page template based on https://saas-ui.dev.
+Feel free to submit any feature requests. If you use this template please share what you've built [on Twitter](https://twitter.com/saas_js) 🚀.
 
-- next 14.1+
-- node v20.10+
-- npm v10.2+
-- tailwind v3.3+
+**[View demo](https://saas-ui-nextjs-landing-page.netlify.app/)**
 
-### 👉 Install Dependencies
+## Tech
+
+- Next.js
+- Chakra UI
+- Saas UI
+- Contentlayer
+- Typescript
+
+## Features
+
+- Feature blocks
+- Testimonials
+- Pricing tables
+- Log in and Sign up pages
+- FAQ
+
+## In progress
+
+- [ ] Supabase Auth
+- [ ] Waitlist sign-up with GetRevue
+- [ ] Blog (Contentlayer)
+- [ ] Docs
+
+## Getting Started
+
+First, clone this repo and run `pnpm i`
+
+To start the app run:
 
 ```bash
-npm install
+pnpm dev
 ```
 
-### 👉 Development Command
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-npm run dev
-```
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-### 👉 Build Command
+## Configuration
 
-```bash
-npm run build
-```
+Configuration files to edit basic site information, add testimonials, faq and pricing table can be found in `/data`.
 
-### 👉 Build and Run With Docker
+## Learn More
 
-```bash
-docker build -t nextplate .
-docker run -p 3000:3000 nextplate
-```
+Find out more about Saas UI.
 
-<!-- reporting issue -->
+- [Saas UI Documentation](https://saas-ui.dev/docs/introduction).
 
-## 🐞 Reporting Issues
+To learn more about Next.js, take a look at the following resources:
 
-We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/zeon-studio/nextplate/issues). It’s possible someone has already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/zeon-studio/nextplate/issues).
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-<!-- licence -->
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## 📝 License
+## Deploy on Vercel
 
-Copyright (c) 2023 - Present, Designed & Developed by [Zeon Studio](https://zeon.studio/)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-**Code License:** Released under the [MIT](https://github.comzeon-studio/nextplate/blob/main/LICENSE) license.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-**Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
+## License
 
-## 💻 Need Custom Development Services?
-
-If you need a custom theme, theme customization, or complete website development services from scratch you can [Hire Us](https://zeon.studio/).
+MIT
