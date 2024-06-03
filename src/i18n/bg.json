@@ -1,0 +1,17 @@
+{
+  "full_name": "Пълно име",
+  "full_name_placeholder": "Въведете вашето пълно име",
+  "mail": "Служебен имейл",
+  "mail_placeholder": "john.doe@email.com",
+  "message": "Нещо друго?",
+  "message_placeholder": "Съобщение тук...",
+  "submit": "Изпрати",
+  "read_more": "Прочетете повече",
+  "categories": "Категории",
+  "tags": "Етикети",
+  "share": "Сподели",
+  "related_post": "Свързана статия",
+  "page_not_found": "Страницата не е намерена",
+  "page_not_found_content": "Страницата, която търсите, може да е била изтрита, преименувана или временно недостъпна.",
+  "back_to_home": "Обратно към началото"
+}
