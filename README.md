@@ -1,3 +1,6 @@
+![GitHub Workflow Status](https://github.com/petemihaylov/silver-octo-guacamole/actions/workflows/node.js.yml/badge.svg?branch=master)
+![GitHub license](https://img.shields.io/github/license/petemihaylov/silver-octo-guacamole)
+![GitHub stars](https://img.shields.io/github/stars/petemihaylov/silver-octo-guacamole)
 
 ## 🚀 Getting Started
 
