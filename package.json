@@ -7,7 +7,7 @@
   "packageManager": "yarn@1.22.19",
   "scripts": {
     "dev": "npx npm run generate-json && next dev",
-    "build": "npx npm run generate-json && next build",
+    "build": "next build",
     "preview": "next start",
     "postbuild": "next-sitemap",
     "format": "prettier -w ./src",
