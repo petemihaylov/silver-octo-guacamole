@@ -17,12 +17,12 @@ export default async function Layout({
 
   return (
     <>
-      <TwSizeIndicator />
+      {/* <TwSizeIndicator /> */}
       <Providers>
-        <Header lang={params.lang} menu={menu} />
-        <SearchModal lang={params.lang} />
+        {/* <Header lang={params.lang} menu={menu} /> */}
+        {/* <SearchModal lang={params.lang} /> */}
         <main>{children}</main>
-        <Footer lang={params.lang} menu={menu} />
+        {/* <Footer lang={params.lang} menu={menu} /> */}
       </Providers>
     </>
   );
