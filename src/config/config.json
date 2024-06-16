@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Nextplate",
-    "base_url": "https://nextplate.netlify.app",
+    "title": "Garden Tree",
+    "base_url": "/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",

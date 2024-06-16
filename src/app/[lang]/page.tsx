@@ -1,93 +1,72 @@
-import languages from "@/config/language.json";
-import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
-import { getActiveLanguages } from "@/lib/languageParser";
-import { markdownify } from "@/lib/utils/textConverter";
-import CallToAction from "@/partials/CallToAction";
-import SeoMeta from "@/partials/SeoMeta";
-import Testimonials from "@/partials/Testimonials";
-import { Button, Feature } from "@/types";
-import Link from "next/link";
-import path from "path";
-import { FaCheck } from "react-icons/fa";
+import React from 'react'
+import languages from '@/config/language.json'
+import { getListPage } from '@/lib/contentParser'
+import { getActiveLanguages } from '@/lib/languageParser'
+import SeoMeta from '@/partials/SeoMeta'
+import { Button, Feature } from '@/types'
+import path from 'path'
+import FlippableCard from '@/layouts/components/FlippableCard'
+import Banner from '@/layouts/components/Banner'
+import Link from 'next/link'
+import ImageFallback from '@/helpers/ImageFallback'
+import { markdownify } from '@/lib/utils/textConverter'
+import { FaCheck } from 'react-icons/fa6'
+import Testimonials from '@/partials/Testimonials'
+import CallToAction from '@/partials/CallToAction'
 
 // remove dynamicParams
-export const dynamicParams = false;
+export const dynamicParams = false
 
 // generate static params
 export async function generateStaticParams() {
   return getActiveLanguages().map((language) => ({
     lang: language.languageCode,
-  }));
+  }))
 }
 
 const Home = ({ params }: { params: { lang: string } }) => {
-  const lang = params.lang;
-  const language = languages.find(
-    (language) => language.languageCode === lang,
-  )!;
-  const homepage = getListPage(
-    path.join(language?.contentDir, "homepage/_index.md"),
-  );
-  const testimonial = getListPage(
-    path.join(language.contentDir, "sections/testimonial.md"),
-  );
-  const callToAction = getListPage(
-    path.join(language.contentDir, "sections/call-to-action.md"),
-  );
-  const { frontmatter } = homepage;
+  const lang = params.lang
+  const language = languages.find((language) => language.languageCode === lang)!
+  const homepage = getListPage(path.join(language?.contentDir, 'homepage/_index.md'))
+  const testimonial = getListPage(path.join(language.contentDir, 'sections/testimonial.md'))
+  const callToAction = getListPage(path.join(language.contentDir, 'sections/call-to-action.md'))
+  const { frontmatter } = homepage
   const {
     banner,
     features,
   }: {
-    banner: { title: string; image: string; content?: string; button?: Button };
-    features: Feature[];
-  } = frontmatter;
+    banner: { title: string; image: string; content?: string; button?: Button }
+    features: Feature[]
+  } = frontmatter
 
   return (
     <>
       <SeoMeta />
-      <section className="section pt-14">
-        <div className="container">
-          <div className="row justify-center">
-            <div className="lg:col-7 md:col-9 mb-8 text-center">
-              <h1
-                className="mb-4 text-h3 lg:text-h1"
-                dangerouslySetInnerHTML={markdownify(banner.title)}
-              />
-              <p
-                className="mb-8"
-                dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
-              />
-              {banner.button!.enable && (
-                <Link
-                  className="btn btn-primary"
-                  href={banner.button!.link}
-                  target={
-                    banner.button!.link.startsWith("http") ? "_blank" : "_self"
-                  }
-                  rel="noopener"
-                >
-                  {banner.button!.label}
-                </Link>
-              )}
-            </div>
-            {banner.image && (
-              <div className="col-12">
-                <ImageFallback
-                  src={banner.image}
-                  className="mx-auto"
-                  width="800"
-                  height="420"
-                  alt="banner image"
-                  priority
-                />
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      <Banner lang={lang} />
+      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 p-8 justify-center items-center">
+        <FlippableCard
+          frontImage={'https://assets-global.website-files.com/657322040347cbe95b29ae19/65772378fec8baac9c86f98c_eduard-NgiE1A-lIyY-unsplash-p-500.jpg'}
+          frontTitle={'Native Plant Nursery'}
+          backContent={"Enhance biodiversity in your garden with Garden Tree's Native Plant Nursery and Seed Bank."}
+          backLink={'#'}
+        />
+        <FlippableCard
+          frontImage={'https://assets-global.website-files.com/657322040347cbe95b29ae19/6577214f0b8de05b1510ae6c_annie-spratt-3vFbHoKYltE-unsplash-p-500.jpg'}
+          frontTitle={'Gardening Consultation'}
+          backContent={"Enhance biodiversity in your garden with Garden Tree's Native Plant Nursery and Seed Bank."}
+          backLink={'#'}
+        />
+        <FlippableCard
+          frontImage={
+            'https://assets-global.website-files.com/657322040347cbe95b29ae19/65772167a01233ffd0539ba4_www-zanda-photography-RBdE3jv5y68-unsplash-p-500.jpg'
+          }
+          frontTitle={'Eco-Friendly Landscaping'}
+          backContent={"Enhance biodiversity in your garden with Garden Tree's Native Plant Nursery and Seed Bank."}
+          backLink={'#'}
+        />
+      </div>
 
+      {/* 
       {features.map((feature, index: number) => (
         <section
           key={index}
@@ -140,12 +119,13 @@ const Home = ({ params }: { params: { lang: string } }) => {
             </div>
           </div>
         </section>
-      ))}
+      ))} */}
 
-      <Testimonials data={testimonial} />
-      <CallToAction data={callToAction} />
+      {/* <Testimonials data={testimonial} />
+      <CallToAction data={callToAction} /> */}
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
+
